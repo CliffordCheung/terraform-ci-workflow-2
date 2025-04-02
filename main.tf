@@ -27,3 +27,17 @@ locals {
 resource "aws_s3_bucket" "s3_tf" {
   bucket = "${local.name_prefix}-s3-tf-bkt-${local.account_id}"
 }
+
+resource "aws_s3_bucket" "bucket_name" {
+  bucket = "bucket_good"
+}
+
+resource "aws_s3_bucket_server_side_encryption_configuration" "good_sse_1" {
+  bucket = aws_s3_bucket.bucket_name.bucket
+  rule {
+    apply_server_side_encryption_by_default {
+      kms_master_key_id = aws_kms_key.mykey.arn
+      sse_algorithm     = "aws:kms"
+    }
+  }
+}
