@@ -4,7 +4,7 @@ provider "aws" {
 
 terraform {
   backend "s3" {
-    bucket = "sctp-ce8-tfstate"
+    bucket = "sctp-ce9-tfstate"
     key    = "clifford-s3-tf-ci.tfstate"  #Change this
     region = "us-east-1"
   }
