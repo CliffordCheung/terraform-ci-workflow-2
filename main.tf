@@ -8,6 +8,7 @@ terraform {
     key    = "clifford-s3-tf-ci.tfstate" #Change this
     region = "us-east-1"
   }
+  required_version = ">= 1.0.0"
 }
 
 data "aws_caller_identity" "current" {}
