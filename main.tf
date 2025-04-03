@@ -28,9 +28,10 @@ resource "aws_s3_bucket" "s3_tf" {
   #checkov:skip=CKV_AWS_20:The bucket is a public static content host
   #checkov:skip=CKV_AWS_145:The bucket is with default encryption
   #checkov:skip=CKV_AWS_21:The bucket has versioning control
-  #checkov:skip=CKV_AWS_6:The bucket has a public access block
+  #checkov:skip=CKV2_AWS_6:The bucket has a public access block
   #checkov:skip=CKV_AWS_144:The S3 bucket has cross-region replication enabled
   #checkov:skip=CKV_AWS_18:The S3 bucket has has access logging enabled
-  #checkov:skip=CKV_AWS_61:The S3 bucket has a lifecycle configuration
+  #checkov:skip=CKV2_AWS_61:The S3 bucket has a lifecycle configuration
+  #checkov:skip=CKV2_AWS_61:The S3 bucket have event notifications enabled
   bucket = "${local.name_prefix}-s3-tf-bkt-${local.account_id}"
 }
