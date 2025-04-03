@@ -32,6 +32,6 @@ resource "aws_s3_bucket" "s3_tf" {
   #checkov:skip=CKV_AWS_144:The S3 bucket has cross-region replication enabled
   #checkov:skip=CKV_AWS_18:The S3 bucket has has access logging enabled
   #checkov:skip=CKV2_AWS_61:The S3 bucket has a lifecycle configuration
-  #checkov:skip=CKV2_AWS_61:The S3 bucket have event notifications enabled
+  #checkov:skip=CKV2_AWS_62:The S3 bucket have event notifications enabled
   bucket = "${local.name_prefix}-s3-tf-bkt-${local.account_id}"
 }
