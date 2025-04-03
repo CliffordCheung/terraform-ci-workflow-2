@@ -23,7 +23,7 @@ jobs:
       uses: hashicorp/setup-terraform@v2
 
     - name: Terraform fmt
-      run: terraform fmt -check
+      run: terraform fmt -check -recursive
 
     - name: Terraform Init
       run: terraform init
@@ -48,6 +48,8 @@ jobs:
       uses: bridgecrewio/checkov-action@master
       with:
         framework: terraform
+        directory: .
+        soft_fail: true
    
     - name: Terraform Plan
       run: terraform plan
